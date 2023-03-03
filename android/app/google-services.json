@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "982311118617",
+    "project_id": "booqui-aaea4",
+    "storage_bucket": "booqui-aaea4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982311118617:android:f57a6d7dd22586505ec788",
+        "android_client_info": {
+          "package_name": "com.example.booqui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982311118617-k8edj3r2lfi77psr9jki9lt732bguooa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANg4H5GQXXEZyceZoXFbRJssDdXa-trZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982311118617-k8edj3r2lfi77psr9jki9lt732bguooa.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "982311118617-qkv3m94udalqormg6h82fcfo9mbk5gbc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.booqui"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
