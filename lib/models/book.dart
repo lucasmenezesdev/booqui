@@ -1,4 +1,8 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:async';
+
+import 'package:pdf_render/pdf_render.dart';
+import 'package:pdf_render/pdf_render_widgets.dart';
+
 class Book {
   final String id;
   final String title;
@@ -15,4 +19,9 @@ class Book {
     this.category,
     this.link,
   );
+
+  Future<PdfDocument> showCover() async {
+    final document = await PdfDocument.openFile(link);
+    return document;
+  }
 }

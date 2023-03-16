@@ -1,4 +1,6 @@
+import 'package:booqui/pages/book_details.dart';
 import 'package:booqui/pages/book_registration_page.dart';
+import 'package:booqui/pages/library_page/widgets/book_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controllers/library_controller.dart';
@@ -54,56 +56,20 @@ class _LibraryPageState extends State<LibraryPage> {
               height: 25,
             ),
             Obx(
-              () => SizedBox(
-                height: MediaQuery.of(context).size.height - 300,
+              () => Expanded(
                 child: GridView.builder(
-                  padding: EdgeInsets.all(20),
+                  padding: EdgeInsets.all(20),  
                   itemCount: _.myBooks.value.length,
                   itemBuilder: (context, index) {
-                    return Column(
-                      children: [
-                        ClipRRect(
-                            borderRadius: BorderRadius.circular(15),
-                            child: Image.asset('assets/images/capa1.png')),
-                        Text(
-                          _.myBooks.value[index].title,
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            //Quantidade de favoritos
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.star,
-                                  color: Colors.amber,
-                                ),
-                                Text(
-                                  '4,9',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            //Quantidade de downloads
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.download,
-                                  color: green,
-                                ),
-                                Text(
-                                  '459',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ],
-                            ),
-                          ],
-                        )
-                      ],
+                    return InkWell(
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  BookDetails(book: _.myBooks.value[index]))),
+                      child: BookItem(
+                        index: index,
+                      ),
                     );
                   },
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

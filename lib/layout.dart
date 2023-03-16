@@ -2,6 +2,7 @@ import 'package:booqui/pages/favorites_page.dart';
 import 'package:booqui/pages/feed_page/feed_page.dart';
 import 'package:booqui/pages/library_page/library_page.dart';
 import 'package:booqui/styles.dart';
+import 'package:booqui/widgets/pdf_thumbnail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -55,6 +56,7 @@ class _LayoutState extends State<Layout> {
         ),
         child: BottomNavigationBar(
           selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.white70,
           backgroundColor: black,
           currentIndex: itemIndex,
           onTap: (int page) {

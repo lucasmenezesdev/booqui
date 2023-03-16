@@ -23,10 +23,42 @@ class _FeedPageState extends State<FeedPage> {
     return ListView(
       children: [
         SizedBox(
+          height: 15,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              height: 45,
+              width: 45,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100), color: green),
+              child: Icon(
+                Icons.search,
+                color: black,
+              ),
+            ),
+            SizedBox(
+              width: 15,
+            ),
+            Text(
+              'Pesquisar',
+              style: TextStyle(
+                  fontSize: 20, fontWeight: FontWeight.w500, color: cream),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        ListBooks(),
+        SizedBox(
           height: 30,
         ),
         ListBooks(),
-        ListBooks(),
+        SizedBox(
+          height: 30,
+        ),
         ListBooks(),
       ],
     );

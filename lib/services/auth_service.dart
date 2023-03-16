@@ -87,11 +87,11 @@ class AuthService extends GetxController {
       print(auth.currentUser?.email);
       Navigator.pop(context);
     } catch (e) {
-      Get.showSnackbar(GetSnackBar(
-        title: "Erro ao fazer login!",
-        message: e.toString(),
-        backgroundColor: Colors.redAccent,
-      ));
+      // Get.showSnackbar(GetSnackBar(
+      //   title: "Erro ao fazer login!",
+      //   message: e.toString(),
+      //   backgroundColor: Colors.redAccent,
+      // ));
     }
   }
 

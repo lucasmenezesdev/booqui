@@ -1,4 +1,6 @@
 import 'dart:io';
+import 'dart:typed_data';
+import 'dart:ui';
 import 'package:booqui/controllers/library_controller.dart';
 import 'package:booqui/services/db_firestore.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -7,6 +9,10 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uuid/uuid.dart';
+import 'package:pdf_render/pdf_render.dart';
+import 'package:path/path.dart' as path;
+import 'package:path_provider/path_provider.dart';
+import 'package:image/image.dart' as img;
 
 import '../services/auth_service.dart';
 
@@ -60,6 +66,7 @@ class BookRegistrationController extends GetxController {
         await FirebaseStorage.instance.ref('books/$fileId').putFile(file);
         Reference ref = FirebaseStorage.instance.ref().child('books/$fileId');
         String linkDownload = await ref.getDownloadURL();
+
         db.collection("books").doc(fileId).set(
           {
             "id": fileId,
@@ -83,6 +90,7 @@ class BookRegistrationController extends GetxController {
           "category": dropValue,
           "link": linkDownload,
         });
+
         var libraryController = Get.put(LibraryController());
         libraryController.getBooks();
 

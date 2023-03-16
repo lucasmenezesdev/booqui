@@ -13,6 +13,5 @@ class LibraryController extends GetxController {
 
   Future<void> getBooks() async {
     myBooks.value = await BookRepository().getBooksCustomer();
-    print(myBooks.value[0].title);
   }
 }
